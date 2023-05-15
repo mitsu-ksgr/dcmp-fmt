@@ -12,7 +12,7 @@ MAN_PROG_NAME = "dcmp-fmt"
 MAN_DESCRIPTION = """
 Format and display the outputs of docker compose ps.
 
-> docker compose ps | dcmp-fmt
+> docker compose ps --format json | dcmp-fmt
 """
 
 DEFAULT_DISPLAY_KEYS = [
