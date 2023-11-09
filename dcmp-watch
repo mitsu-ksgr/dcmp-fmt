@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+watch -n 1 'docker compose ps --format json | dcmp-fmt'
+
