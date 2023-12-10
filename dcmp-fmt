@@ -86,13 +86,31 @@ def calc_maxlen(data):
     return maxlen
 
 
+def read_inputs():
+    buf = []
+    while True:
+        line = sys.stdin.readline().strip()
+        if line == '':
+            break
+        else:
+            buf.append(line)
+
+    data = ''
+    if len(buf) == 1:
+        data = buf[0]
+    else:
+        data = "[{}]".format(",".join(buf))
+
+    return data
+
+
 def main(args):
     keys = DEFAULT_DISPLAY_KEYS
     if args.keys:
         keys = args.keys.split(',')
 
     # Load ps data from stdin
-    ps_json = json.loads(input())
+    ps_json = json.loads(read_inputs())
     if type(ps_json) is not list:
         ps_json = [ps_json]
     maxlen = calc_maxlen(ps_json)
